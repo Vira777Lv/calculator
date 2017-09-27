@@ -1,0 +1,17 @@
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #9156e1;
+  background: -webkit-gradient(linear, left top, right bottom, from(#9156e1), to(#f59173));
+  color: goldenrod;
+  height: 100vh;
+}
+
+.container h1 {
+  margin: 0;
+}
