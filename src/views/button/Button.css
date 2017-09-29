@@ -1,0 +1,21 @@
+.operands {
+  width: 102px;
+  height: 100%;
+  padding: 0;
+  outline: none;
+  background: #737373;
+  border: 1px solid #808080;
+  font-size: 25px;
+  color: #d98192;
+  cursor: pointer;
+}
+
+.operands:active {
+  opacity: .8;
+}
+
+.operands:last-child {
+  background: #9156e1;
+  color: #ffd900;
+  width: 204px;
+}

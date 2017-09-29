@@ -1,47 +1,29 @@
 import React, { Component } from 'react';
 
+import Display from '../display/Display';
+import Keyboard from '../keyboard/Keyboard';
+
 import styles from './Calculator.css';
 
-const mathTable = [
-  ['c', '(', ')', '÷'],
-  ['7', '8', '9' ,'×'],
-  ['4', '5', '6', '+'],
-  ['1', '2', '3', '-'],
-  ['0', ',', '=']
-];
-
-
-
 class Calculator extends Component {
-
-  onBtnClick(operand) {
-    console.log(operand)
+  constructor(props) {
+    super(props);
+    this.state = {
+      result: null,
+      prev: null,
+      next: null,
+      operation: null,
+    };
   }
 
+  handleBtnClick = (btnName) => {
+    console.log(btnName)
+  };
   render() {
     return (
       <div className={styles.calculator}>
-        <div className={styles.resultTable}>
-          <input type="text" autoFocus={true} className={styles.math} pattern="/[0-9]/" />
-          <span className={styles.answer}>0</span>
-        </div>
-        <div>
-          {mathTable.map((row) => {
-            let mutants = row.map((operand, index) => {
-              return (
-                <button
-                  key={index}
-                  className={styles.operands}
-                  id={operand === '=' ? styles['pink'] : null}
-                  onClick={this.onBtnClick}
-                >
-                  {operand}
-                </button>
-              )
-            });
-            return <div className={styles.rows}>{mutants}</div>
-          })}
-        </div>
+       <Display value={this.state.next || this.state.result || '0'}/>
+        <Keyboard onClick={this.handleBtnClick} />
       </div>
     )
   }
